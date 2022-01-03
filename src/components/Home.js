@@ -3,7 +3,7 @@ import styled from "styled-components";
 import michaelpic from '../michaelpic.jpeg'
 import {useNavigate} from "react-router";
 
-function Home() {
+function Home({loading}) {
 
 let navigate = useNavigate();
 
@@ -16,7 +16,8 @@ const startGame = () => {
         <Container>
             <Heading>The Office</Heading>
             <Heading2>Quotes</Heading2>
-            <Button onClick={startGame}>Play</Button>
+            {loading ? <Heading2>Loading Quotes</Heading2> : 
+            <Button onClick={startGame}>Play</Button>}
         </Container>
         // </div>
     )

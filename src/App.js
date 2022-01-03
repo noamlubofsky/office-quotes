@@ -15,8 +15,10 @@ import { BrowserRouter as Router,
 function App() {
   const [quotes, setQuotes] = useState([])
   const [points, setPoints] = useState(0)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     fetch(`https://www.officeapi.dev/api/quotes/`, {
       headers : { 
         'Content-Type': 'application/json',
@@ -25,18 +27,20 @@ function App() {
     })
     .then((res) => res.json())
     .then((data) => {setQuotes(data.data)})
+    setLoading(false)
   }, []);
 
   const shuffledArray = quotes.sort((a, b) => 0.5 - Math.random());
   const gameQuotes = shuffledArray.slice(0, 5);
-
 
   return (
     <div>
 <Router>
       {/* <Header /> */}
       <Routes>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/" element={<Home 
+          loading={loading}
+          />}/>
           <Route path="/quote1" element={<Quote1
                     quote={gameQuotes[0]}
                     points={points}
