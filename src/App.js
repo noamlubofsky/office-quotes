@@ -33,6 +33,8 @@ function App() {
   const shuffledArray = quotes.sort((a, b) => 0.5 - Math.random());
   const gameQuotes = shuffledArray.slice(0, 5);
 
+  console.log(gameQuotes)
+
   return (
     <div>
 <Router>
@@ -68,6 +70,7 @@ function App() {
                     />}/>
           <Route path="/score" element={<Score
                     points={points}
+                    setPoints={setPoints}
                     />}/>
 
       </Routes>

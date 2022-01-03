@@ -3,12 +3,13 @@ import styled from "styled-components";
 import {useNavigate} from "react-router";
 import office from '../office.jpeg'
 
-function Score({points}) {
+function Score({points, setPoints}) {
 
     let navigate = useNavigate();
 
     const home = () => {
         navigate('/')
+        setPoints(0)
     }
 
     return(
