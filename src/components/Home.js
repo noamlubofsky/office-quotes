@@ -24,8 +24,8 @@ const startGame = () => {
 
 const Button = styled.button`
 
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  margin-top: 10vh;
+  margin-bottom: 44.2vh;
   margin-left: 10vw;
   width: 30vw;
   height: 16vh;
@@ -41,14 +41,21 @@ transition: all .35s;
 justify-content: center;
 font-size: 2vh;
 
+&:hover {
+    border: 3px solid black;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+  }
+
   `;
 
 const Container = styled.div`
 background-image: url(${michaelpic});
-height: 800px;
+height: 100%;
 width: 100%;
 top: 0;
-padding:
+padding: none;
 `;
 
 const Heading = styled.h1`
