@@ -40,7 +40,12 @@ function Quote1({quote, points, setPoints}) {
             </div> : null}
             {!answered ? null : 
             <div>
-                {correct ? <Correct>Correct!</Correct> : <Wrong>Wrong!</Wrong>}
+            {correct ? <Correct>Correct!</Correct> :
+                <div> 
+                <Wrong>Wrong!</Wrong>
+                <AnswerButton>Hover for answer<Answer>{quote.character.firstname + ' ' + quote.character.lastname}</Answer></AnswerButton>
+                </div>
+                }                
                 <Button onClick={next}>Done</Button>
             </div>
             }
@@ -48,6 +53,38 @@ function Quote1({quote, points, setPoints}) {
         // </div>
     )
 }
+
+
+const AnswerButton = styled.button`
+
+margin-left: 20vw;
+  width: 20vw;
+  height: 15vh;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+text-transform: uppercase;
+letter-spacing: 1px;
+transition: all .35s;
+justify-content: center;
+font-size: 2vh;
+background-color: grey;
+color: white;
+&:hover {
+    border: 3px solid grey;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+  }
+  `;
+
+  const Answer = styled.h1`
+font-size: 40px;
+color: grey;
+font-family: helvetica;
+font-weight: bold;
+`;
 
 const Button = styled.button`
 

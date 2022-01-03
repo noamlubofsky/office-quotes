@@ -101,6 +101,13 @@ color: white;
   }
   `;
 
+  const Answer = styled.h1`
+font-size: 40px;
+color: grey;
+font-family: helvetica;
+font-weight: bold;
+`;
+
 
 const Input = styled.input`
     width: 20vw;
@@ -126,12 +133,7 @@ font-family: helvetica;
 font-weight: bold;
 `;
 
-const Answer = styled.h1`
-font-size: 40px;
-color: grey;
-font-family: helvetica;
-font-weight: bold;
-`;
+
 
 const Correct = styled.h1`
 font-size: 80px;
