@@ -33,7 +33,7 @@ function Quote1({quote, points, setPoints}) {
             <div>
             <Quote>"{quote.content}"</Quote>
             <form onSubmit={handleSubmit}>
-            <Input required type="text" value={answer} onChange={(e) => setAnswer(e.target.value)}placeholder="Your Answer"></Input>
+            <Input required type="text" value={answer} onChange={(e) => setAnswer(e.target.value)}placeholder="Who Said It?"></Input>
             <br></br>
             <Button type="submit">Submit Answer</Button> 
             </form>
