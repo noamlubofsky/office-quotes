@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {useNavigate} from "react-router";
 import office from '../office.jpeg'
+import home from '../home.png'
 
 function Score({points, setPoints}) {
 
@@ -30,9 +31,16 @@ function Score({points, setPoints}) {
 
 const Button = styled.button`
 
-margin-left: 25vw;
-  width: 10vw;
-  height: 6vh;
+margin-left: 22vw;
+border-radius: 10px;
+margin-top: 5vh;
+background-image: url(${home});
+background-position: center;
+background-repeat: no - repeat;
+background-size: cover;
+border: none;
+  width: 16.5vw;
+  height: 10vh;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
@@ -41,12 +49,13 @@ text-transform: uppercase;
 letter-spacing: 1px;
 transition: all .35s;
 justify-content: center;
-font-size: 2vh;
+// font-size: 2vh;
 &:hover {
-    height: 10vh;
-    border: 3px solid black;
-    background: transparent;
-    color: black;
+    // height: 10vh;
+    // border: 3px solid black;
+    // background: transparent;
+    // color: black;
+    opacity: 50%;
     cursor: pointer;
   }
   `;
@@ -63,6 +72,8 @@ margin-left: 15vw;
 margin-right: 40vw;
 font-family: helvetica;
 font-weight: bold;
+text-shadow: 5px 5px 5px grey;
+
 `;
 
 const HeaderNumber = styled.h1`
@@ -73,6 +84,7 @@ margin-left: 25vw;
 margin-right: 40vw;
 font-family: helvetica;
 font-weight: bold;
+text-shadow: 5px 5px 5px grey;
 `;
 
 const Container = styled.div`

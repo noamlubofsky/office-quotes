@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import office from '../office.jpeg'
+import submitbutton from '../submitbutton.png'
+import done from '../done.png'
 import {useNavigate} from "react-router";
 
 
@@ -35,18 +37,18 @@ function Quote1({quote, points, setPoints}) {
             <form onSubmit={handleSubmit}>
             <Input required type="text" value={answer} onChange={(e) => setAnswer(e.target.value)}placeholder="Who Said It?"></Input>
             <br></br>
-            <Button type="submit">Submit Answer</Button> 
+            <Button type="submit"></Button> 
             </form>
             </div> : null}
             {!answered ? null : 
             <div>
-            {correct ? <Correct>Correct!</Correct> :
+                {correct ? <Correct>Correct!</Correct> :
                 <div> 
                 <Wrong>Wrong!</Wrong>
                 <AnswerButton>Hover for answer<Answer>{quote.character.firstname + ' ' + quote.character.lastname}</Answer></AnswerButton>
                 </div>
-                }                
-                <Button onClick={next}>Done</Button>
+                }
+                <NextButton onClick={next}></NextButton>
             </div>
             }
         </Container>
@@ -54,60 +56,99 @@ function Quote1({quote, points, setPoints}) {
     )
 }
 
+const Button = styled.button`
 
-const AnswerButton = styled.button`
+margin-left: 22vw;
+border-radius: 10px;
+margin-top: 5vh;
+background-image: url(${submitbutton});
+background-position: center;
+background-repeat: no - repeat;
+background-size: cover;
+border: none;
+  width: 16.5vw;
+  height: 10vh;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+text-transform: uppercase;
+letter-spacing: 1px;
+transition: all .35s;
+justify-content: center;
+// font-size: 2vh;
+&:hover {
+    // height: 10vh;
+    // border: 3px solid black;
+    // background: transparent;
+    // color: black;
+    opacity: 50%;
+    cursor: pointer;
+  }
+  `;
+
+  const NextButton = styled.button`
+
+margin-left: 22vw;
+border-radius: 10px;
+margin-top: 5vh;
+background-image: url(${done});
+background-position: center;
+background-repeat: no - repeat;
+background-size: cover;
+border: none;
+  width: 16.5vw;
+  height: 10vh;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+text-transform: uppercase;
+letter-spacing: 1px;
+transition: all .35s;
+justify-content: center;
+// font-size: 2vh;
+&:hover {
+    // height: 10vh;
+    // border: 3px solid black;
+    // background: transparent;
+    // color: black;
+    opacity: 50%;
+    cursor: pointer;
+  }
+  `;
+
+  const AnswerButton = styled.button`
 
 margin-left: 20vw;
+border-radius: 10px;
   width: 20vw;
   height: 15vh;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
   align-items: center;
-text-transform: uppercase;
+// text-transform: uppercase;
 letter-spacing: 1px;
-transition: all .35s;
+transition: all 1s;
 justify-content: center;
 font-size: 2vh;
-background-color: grey;
-color: white;
+background-color: black;
+color: #D4CBC4;
 &:hover {
-    border: 3px solid grey;
+    border: 3px solid black;
     background: transparent;
     color: transparent;
-    cursor: pointer;
+    // cursor: pointer;
   }
   `;
 
   const Answer = styled.h1`
 font-size: 40px;
-color: grey;
+color: black;
 font-family: helvetica;
 font-weight: bold;
 `;
-
-const Button = styled.button`
-
-margin-left: 25vw;
-  width: 10vw;
-  height: 6vh;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  align-items: center;
-text-transform: uppercase;
-letter-spacing: 1px;
-transition: all .35s;
-justify-content: center;
-font-size: 2vh;
-&:hover {
-    height: 10vh;
-    border: 3px solid black;
-    background: transparent;
-    color: black;
-    cursor: pointer;
-  }
-  `;
 
 
 const Input = styled.input`
@@ -134,6 +175,8 @@ font-family: helvetica;
 font-weight: bold;
 `;
 
+
+
 const Correct = styled.h1`
 font-size: 80px;
 color: green;
@@ -142,16 +185,19 @@ margin-left: 15vw;
 margin-right: 40vw;
 font-family: helvetica;
 font-weight: bold;
+text-shadow: 5px 5px 5px rgb(0, 65, 5);
+
 `;
 
 const Wrong = styled.h1`
 font-size: 80px;
 color: red;
 padding: 50px;
-margin-left: 15vw;
+margin-left: 16.5vw;
 margin-right: 40vw;
 font-family: helvetica;
 font-weight: bold;
+text-shadow: 5px 5px 5px maroon;
 `;
 
 const Container = styled.div`
@@ -159,6 +205,9 @@ top: 0;
 background-image: url(${office});
 height: 800px;
 width: 100%;
+background-position: center;
+background-repeat: no - repeat;
+background-size: cover;
 `;
 
 export default Quote1

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import michaelpic from '../michaelpic.jpeg'
+import quotes from '../quotes.png'
 import {useNavigate} from "react-router";
 
 function Home({loading}) {
@@ -14,8 +15,10 @@ const startGame = () => {
     return(
         // <div>
         <Container>
-            <Heading>The Office</Heading>
-            <Heading2>Quotes</Heading2>
+            {/* <Heading>The Office</Heading>
+            <Heading2>Quotes</Heading2> */}
+            <Header src={quotes}/>
+            <br></br>
             {loading ? <Heading2>Loading Quotes</Heading2> : 
             <Button onClick={startGame}>Play</Button>}
         </Container>
@@ -26,6 +29,7 @@ const startGame = () => {
 const Button = styled.button`
 
   margin-top: 10vh;
+  border-radius: 10px;
   margin-bottom: 44.2vh;
   margin-left: 10vw;
   width: 30vw;
@@ -35,6 +39,8 @@ const Button = styled.button`
   text-decoration: none;
   text-align: center;
   align-items: center;
+  background-color: black;
+  color: #D4CBC4;
 //   color: rgb(37, 38, 51);
 text-transform: uppercase;
 letter-spacing: 1px;
@@ -55,8 +61,17 @@ const Container = styled.div`
 background-image: url(${michaelpic});
 height: 100%;
 width: 100%;
-top: 0;
+// top: 0;
 padding: none;
+background-position: center;
+background-repeat: no - repeat;
+background-size: cover;
+`;
+
+const Header = styled.img`
+margin-left: 10vw;
+margin-top: 10vh;
+  width: 40vw;
 `;
 
 const Heading = styled.h1`
