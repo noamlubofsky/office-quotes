@@ -24,7 +24,7 @@ function Score({points, setPoints}) {
             {points === 20  ? <Image alt="Image" src="https://media1.giphy.com/media/jOpLbiGmHR9S0/200.gif"/> : null}
             {points === 0  ? <Image alt="Image" src="https://media2.giphy.com/media/O1oJ840fg6uOVCqdzJ/giphy.gif"/> : null}
             <br></br>
-            <Button onClick={home}>Home</Button>
+            <Button onClick={home}></Button>
         </Container>
     )
 }

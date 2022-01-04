@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import michaelpic from '../michaelpic.jpeg'
-import quotes from '../quotes.png'
+import officequotes from '../officequotes.png'
 import {useNavigate} from "react-router";
 
 function Home({loading}) {
@@ -17,7 +17,7 @@ const startGame = () => {
         <Container>
             {/* <Heading>The Office</Heading>
             <Heading2>Quotes</Heading2> */}
-            <Header src={quotes}/>
+            <Header src={officequotes}/>
             <br></br>
             {loading ? <Heading2>Loading Quotes</Heading2> : 
             <Button onClick={startGame}>Play</Button>}
