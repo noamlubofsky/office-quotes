@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import michaelpic from '../michaelpic.jpeg'
+import michaelpic from '../michaelpic.png'
 import officequotes from '../officequotes.png'
 import {useNavigate} from "react-router";
 
