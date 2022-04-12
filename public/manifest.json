@@ -3,17 +3,17 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "office-icon.png",
+      "src": "office.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "office-icon.png",
+      "src": "office.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "office-icon.png",
+      "src": "office.png",
       "type": "image/png",
       "sizes": "512x512"
     }
